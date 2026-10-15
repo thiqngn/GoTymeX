@@ -1,0 +1,14 @@
+<section id="q1" data-transition="fade" style="background:#F6F3EC;color:#15223A;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:32px">
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:64px;font-weight:600;line-height:1.1">Q1 · A cohort is pinned, frozen at maturity, and gated before it publishes</h2>
+<div style="display:flex;gap:40px;align-items:start">
+<img src="/_blob/50cb914cd94078cec784d956175e6a63" alt="The May 2026 cohort as Product and Sales read it: funded share frozen and recomputed, outcome mix by channel, the five reasons" style="width:850px;height:640px;object-fit:contain;background:#FFFFFF;border:1px solid #DED8CC;border-radius:12px">
+<div style="flex:1;display:flex;flex-direction:column;gap:20px">
+<div style="background:#FFFFFF;border-left:6px solid #E38B3A;padding:20px 28px;display:flex;flex-direction:column;gap:6px"><h3 style="font-size:28px;font-weight:600">Pinned</h3><p style="font-size:25px;color:#3C4656;line-height:1.35">The cohort is keyed on the first submission ever captured. A rewrite of submitted_at cannot move an application between months.</p></div>
+<div style="background:#FFFFFF;border-left:6px solid #E38B3A;padding:20px 28px;display:flex;flex-direction:column;gap:6px"><h3 style="font-size:28px;font-weight:600">One reason that always sums</h3><p style="font-size:25px;color:#3C4656;line-height:1.35">The first exit after the last re-entry on one cross-service timeline, read at day 14. Funded, five buckets and in-progress add up to the cohort.</p></div>
+<div style="background:#FFFFFF;border-left:6px solid #E38B3A;padding:20px 28px;display:flex;flex-direction:column;gap:6px"><h3 style="font-size:28px;font-weight:600">Freeze, diff, gate</h3><p style="font-size:25px;color:#3C4656;line-height:1.35">A mature cohort is written once. Today’s recompute is diffed against it. Two thresholds: the Lending squad sets flag, Product sets hold. A held cohort publishes a HELD row, never silence.</p></div>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#6B7484;width:1200px">Figure 10 in the document. Values are illustrative.</p>
+<p style="position:absolute;right:128px;bottom:64px;font-size:24px;color:#6B7484;width:60px;text-align:right">9</p>
+<aside>Walk the picture top to bottom: cohort size, funded share frozen beside recomputed, outcome mix by channel, then why the rest did not fund, each of the brief’s five reasons as a share of the cohort and of the unfunded. Say “illustrative” once and do not linger on the arithmetic. The join at answer time is the funnel fact and two dimensions; the fact itself is built once a day from six source tables, every join as of commit time against history. Corrections are versioned restatements with a reason, and the roll-up mapping is versioned with a change reason and an approver.</aside>
+</section>

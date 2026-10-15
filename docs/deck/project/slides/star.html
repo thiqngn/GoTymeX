@@ -1,0 +1,14 @@
+<section id="star" data-transition="fade" style="background:#F6F3EC;color:#15223A;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:36px">
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:64px;font-weight:600;line-height:1.1">Gold is a plain star, and beside it, records of what someone was shown</h2>
+<div style="display:flex;gap:40px;align-items:start">
+<img src="/_blob/a900346988586764f9e831e69d5be716" alt="Gold as a star: three facts, five dimensions, metric views; beside it the written-once records" style="width:1100px;height:518px;object-fit:contain;background:#FFFFFF;border:1px solid #DED8CC;border-radius:12px">
+<div style="flex:1;display:flex;flex-direction:column;gap:18px">
+<p style="font-size:27px;color:#3C4656;line-height:1.35"><b>Three facts, five dimensions, no stored aggregates.</b> Every number is a join and a group by. Metrics are code-owned views, so Product owns a definition by owning a file.</p>
+<p style="font-size:27px;color:#3C4656;line-height:1.35"><b>Keys are the business codes.</b> Channel, branch, product, the bank-local date. A join reads the way a business user says it.</p>
+<p style="font-size:27px;color:#3C4656;line-height:1.35"><b>Written once, never edited:</b> the frozen cohort, the decision input record, the morning watchlist, the gate verdict. A frozen row stores names as text, so it never depends on a dimension that changes later.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#6B7484;width:1200px">Figure 8 in the document.</p>
+<p style="position:absolute;right:128px;bottom:64px;font-size:24px;color:#6B7484;width:60px;text-align:right">8</p>
+<aside>The facts: one row per submitted application, one per disbursement with a negative row per reversal, one per whitelist entry, for whitelist-to-application conversion. The dimensions include a versioned drop-off bucket mapping, so the roll-up from fine outcome codes to the brief’s five reasons is a seed Product can change with a diff, not logic. The written-once records are the part to stress: what a regulator was shown, what compliance was shown, what ops was told each morning, and whether a cohort was allowed to publish, each a row that cannot be edited afterwards.</aside>
+</section>

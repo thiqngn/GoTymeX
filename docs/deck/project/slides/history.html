@@ -1,0 +1,14 @@
+<section id="history" data-transition="fade" style="background:#F6F3EC;color:#15223A;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:36px">
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:64px;font-weight:600;line-height:1.1">History is captured, never reconstructed, and a gap says so</h2>
+<div style="display:flex;gap:40px;align-items:start">
+<img src="/_blob/f3498703e81e7f11a18951075ab21c0a" alt="One loan_offer row re-issued and soft-deleted becomes three Bronze rows and three Silver versions" style="width:1000px;height:430px;object-fit:contain;background:#FFFFFF;border:1px solid #DED8CC;border-radius:12px">
+<div style="flex:1;display:flex;flex-direction:column;gap:18px">
+<p style="font-size:28px;color:#3C4656;line-height:1.35"><b>One source row, three versions.</b> Nothing in Bronze is updated or deleted. Silver gives each version a valid-from and valid-to, and every as-of read in the design uses the same predicate.</p>
+<p style="font-size:28px;color:#3C4656;line-height:1.35"><b>A capture gap is data.</b> A read inside it returns NOT_CAPTURED, a cohort over it freezes as HELD, and the funnel starts at the first month with no gap.</p>
+<p style="font-size:28px;color:#3C4656;line-height:1.35"><b>One hard failure only.</b> A contracted column that disappears or changes type fails the run. An unknown enum becomes UNMAPPED, still sums, and is published as a contract violation.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#6B7484;width:1200px">Figure 4 in the document.</p>
+<p style="position:absolute;right:128px;bottom:64px;font-size:24px;color:#6B7484;width:60px;text-align:right">6</p>
+<aside>This slide is why Q2 is answerable at all. A loan_offer row is unique per application and overwritten in place, so its history exists only in the change log. Say the cost out loud: anything before the first captured image is NOT_CAPTURED and labelled so; I did not pretend to reconstruct it. The capture columns are the operation, the source commit time, the change sequence, the load type, the source file, the ingestion time, and a rescued-data column that makes a type change visible instead of silent.</aside>
+</section>

@@ -1,0 +1,12 @@
+<section id="boundary" data-transition="fade" style="background:#F6F3EC;color:#15223A;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:32px">
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:64px;font-weight:600;line-height:1.1">Direct identifiers stop at one macro, one function, one principal</h2>
+<img src="/_blob/59a3e27c75ff7c7c1ff4fc682e3441a0" alt="The identifier boundary: one applicant row in; pseudonymous version to Silver, clear identifiers to restricted, blobs stay in Bronze" style="width:1664px;height:440px;object-fit:contain;background:#FFFFFF;border:1px solid #DED8CC;border-radius:12px">
+<div style="display:flex;gap:32px">
+<p style="flex:1;font-size:26px;color:#3C4656;line-height:1.35"><b>One macro</b> builds all nineteen history tables and replaces national_id with a keyed hash. No analyst-readable table has ever held a direct identifier.</p>
+<p style="flex:1;font-size:26px;color:#3C4656;line-height:1.35"><b>One function</b>, HMAC-SHA-256 with a key version, that only the transform principal can run. Nobody else can compute the key for a chosen id.</p>
+<p style="flex:1;font-size:26px;color:#3C4656;line-height:1.35"><b>Rotation is a rebuild.</b> Silver is rebuilt from Bronze every morning anyway, so a new key is a re-key, not a migration.</p>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#6B7484;width:1200px">Figure 17 in the document (section 6.1). Names, mobile, email and date of birth go clear to the restricted schema only.</p>
+<p style="position:absolute;right:128px;bottom:64px;font-size:24px;color:#6B7484;width:60px;text-align:right">7</p>
+<aside>This is the point that makes Q4 easy. Because the boundary is one macro, the fields the brief names never reach an analyst-readable table, so the regulator proof is an absence proof plus access evidence, not a masking audit. Rejected: unkeyed SHA-256, because a small structured id space can be enumerated; a token vault, because the mapping table is a second store of clear identifiers to guard, back up, erase and evidence. Erasure: retention wins for raw data and decision records; the analytical layers remove the bridge and identity rows, null personal attributes, and vacuum seven days of table history. Frozen cohorts carry no person at all.</aside>
+</section>

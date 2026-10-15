@@ -1,0 +1,14 @@
+<section id="pipeline" data-transition="fade" style="background:#F6F3EC;color:#15223A;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:36px">
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:64px;font-weight:600;line-height:1.1">One capture path feeds both speeds, so they cannot disagree</h2>
+<div style="display:flex;gap:40px;align-items:start">
+<img src="/_blob/32d397187a6f2c7f8c7b5098795b97d3" alt="Architecture: DMS to S3 landing, Bronze change log, dbt Silver and Gold, one alert stream, Unity Catalog" style="width:1100px;height:534px;object-fit:contain;background:#FFFFFF;border:1px solid #DED8CC;border-radius:12px">
+<div style="flex:1;display:flex;flex-direction:column;gap:24px">
+<div style="background:#FFFFFF;border-left:6px solid #E38B3A;padding:24px 28px;display:flex;flex-direction:column;gap:8px"><h3 style="font-size:30px;font-weight:600">Capture</h3><p style="font-size:26px;color:#3C4656;line-height:1.35">DMS reads each writer’s binlog into one-minute S3 files. Bronze is an append-only change log, full refresh blocked.</p></div>
+<div style="background:#FFFFFF;border-left:6px solid #1F6F8B;padding:24px 28px;display:flex;flex-direction:column;gap:8px"><h3 style="font-size:30px;font-weight:600">Daily route</h3><p style="font-size:26px;color:#3C4656;line-height:1.35">Silver and Gold are one dbt project, rebuilt from Bronze at 05:00, tunable to 30 minutes.</p></div>
+<div style="background:#FFFFFF;border-left:6px solid #15223A;padding:24px 28px;display:flex;flex-direction:column;gap:8px"><h3 style="font-size:30px;font-weight:600">Minutes route</h3><p style="font-size:26px;color:#3C4656;line-height:1.35">One stream reads the same landing files. Nothing is real-time unless a question needs it.</p></div>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#6B7484;width:1200px">Figure 2 in the document. Orange marks where clear identifiers may live: landing, Bronze, restricted.</p>
+<p style="position:absolute;right:128px;bottom:64px;font-size:24px;color:#6B7484;width:60px;text-align:right">4</p>
+<aside>Stress: the daily build and the alert stream read the same landing files, so they cannot disagree about what happened. Nothing is real-time unless a question needs it, and only one does: a failed disbursement, and money moving after a DECLINED decision. Why DMS over the services’ existing Kafka CDC topics: reuse is the strongest alternative and I say so, but I could not confirm six things about those topics; any one missing means no history for Silver. DMS until an owner confirms, then Bronze reads the topics and nothing downstream changes. Why dbt though it is outside the brief’s stack: same warehouse and catalog, so no new engine to govern; masks and tags live with each model; the volume makes a full daily rebuild cheap, which is what makes “a fix reaches all of history tomorrow” true.</aside>
+</section>

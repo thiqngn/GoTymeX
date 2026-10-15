@@ -1,0 +1,18 @@
+<section id="q3q4" data-transition="fade" style="background:#F6F3EC;color:#15223A;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:32px">
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:64px;font-weight:600;line-height:1.1">Q3 and Q4 · An operational list that is a record, and a proof that is evidence</h2>
+<div style="display:flex;gap:40px;align-items:start">
+<div style="flex:1;display:flex;flex-direction:column;gap:20px">
+<img src="/_blob/dd0a69fd72f73feda85cdeb85e6a2959" alt="This morning’s watchlist as ops reads it: three sections, counts first, rows in call order" style="width:812px;height:349px;object-fit:contain;background:#FFFFFF;border:1px solid #DED8CC;border-radius:12px">
+<h3 style="font-size:30px;font-weight:600;color:#E38B3A">Q3 · Offer expiry watchlist</h3>
+<p style="font-size:25px;color:#3C4656;line-height:1.35">The offer is read by version, because the row is overwritten in place. Acceptance is an anti-join at the data cut-off. Expiry-pending offers lead the list, since a customer can still accept until the expiry job runs. Each morning’s list is snapshotted: what ops was told is a record.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:20px">
+<img src="/_blob/9ecc0abf40bb5b6f102956b296bacbe9" alt="The regulator pack as compliance reads it: one tile per item, the daily probe strip, break-glass reads with tickets" style="width:812px;height:422px;object-fit:contain;background:#FFFFFF;border:1px solid #DED8CC;border-radius:12px">
+<h3 style="font-size:30px;font-weight:600;color:#E38B3A">Q4 · Proof that PII was masked</h3>
+<p style="font-size:25px;color:#3C4656;line-height:1.35">Six evidence tables, none of them business data, exported daily to a write-once bucket in a security-owned account. A probe principal reads masked columns every day and tries the forbidden layers. Break-glass reads join to their ticket.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#6B7484;width:1200px">Figures 14 and 16 in the document. Values and counts are illustrative.</p>
+<p style="position:absolute;right:128px;bottom:64px;font-size:24px;color:#6B7484;width:60px;text-align:right">11</p>
+<aside>Q3: the open-offer test is explicit because an accepted offer never expires in the data; without it every accepted offer would top the list each morning. Names and mobiles come from the restricted schema through one view, for ops only. Q4: the short answer is that the fields the brief names never reach an analyst-readable table, so the pack proves two more things for every read: no analyst could reach the layers that hold them, and every sensitive attribute an analyst did read was masked at that moment. The platform can add evidence but cannot change or delete it.</aside>
+</section>
